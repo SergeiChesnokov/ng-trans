@@ -1,0 +1,13 @@
+1. Жизненный цыкл UpdateVaucher.
+Создание объекта происходит с анотацией PostRequest("\UpdateVaucher\create") в запросе ожидается объект с полями:
+[
+	"name" : string
+	"coordinates" : string?
+	"tyep" : int?
+	"object from type" : [
+		"ATM" : bool
+		...
+	]
+]
+Если все в порядке, сервер сохраняет заявку в БД update_vauchers и возвращает код 201(Created), иначе 400(Bad Request) (возможно, если существует карточка с данными name и coordinates)
+
